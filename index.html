@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mode Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .banner {
+            width: 100%;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            float: left;
+        }
+        .sidebar {
+            width: 200px;
+            padding-top: 80px;
+            background-color: #f4f4f4;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            float: left;
+        }
+        .content {
+            margin-left: 200px;
+            padding: 80px 20px 20px;
+            flex-grow: 1;
+            float: left;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var mode = 0;
+
+        function setMode(newMode) {
+            mode = newMode;
+            document.getElementById('modeDisplay').innerText = mode;
+        }
+    </script>
+</head>
+<body>
+    <div class="banner">
+        <h1>Mode Selector Page</h1>
+    </div>
+    <div class="sidebar">
+        <button class="button" onclick="setMode(1)">Mode 1</button>
+        <button class="button" onclick="setMode(2)">Mode 2</button>
+        <button class="button" onclick="setMode(3)">Mode 3</button>
+        <button class="button" onclick="setMode(4)">Mode 4</button>
+        <button class="button" onclick="setMode(5)">Mode 5</button>
+    </div>
+    <div class="content">
+        <h2>Current Mode: <span id="modeDisplay">None</span></h2>
+    </div>
+
+</body>
+</html>
